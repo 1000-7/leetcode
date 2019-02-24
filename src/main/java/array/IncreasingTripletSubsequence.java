@@ -12,7 +12,7 @@ package array;// Given an unsorted array return whether an increasing subsequenc
 // Given [5, 4, 3, 2, 1],
 // return false.
 
-public class IncreasingTripletSequence {
+public class IncreasingTripletSubsequence {
     public boolean increasingTriplet(int[] nums) {
         int firstMin = Integer.MAX_VALUE;
         int secondMin = Integer.MAX_VALUE;

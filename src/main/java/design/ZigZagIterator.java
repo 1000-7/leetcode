@@ -8,6 +8,9 @@ package design;// Given two 1d vectors, implement an iterator to return their el
 
 // Follow up: What if you are given k 1d vectors? How well can your code be extended to such cases?
 
+import java.util.Iterator;
+import java.util.List;
+
 /**
  * Your ZigzagIterator object will be instantiated and called as such: 
  * ZigzagIterator i = new ZigzagIterator(v1, v2);
@@ -19,7 +22,7 @@ public class ZigZagIterator {
     private Iterator<Integer> j;
     private Iterator<Integer> temp;
 
-    public ZigzagIterator(List<Integer> v1, List<Integer> v2) {
+    public ZigZagIterator(List<Integer> v1, List<Integer> v2) {
         i = v1.iterator();
         j = v2.iterator();
     }

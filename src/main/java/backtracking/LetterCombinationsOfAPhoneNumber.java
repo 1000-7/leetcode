@@ -14,6 +14,8 @@ package backtracking;// Given a digit string, return all possible letter combina
 // Input:Digit string "23"
 // Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 
+import java.util.ArrayList;
+import java.util.List;
 class LetterCombinationsOfAPhoneNumber {
     public List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<String>();

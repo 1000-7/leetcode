@@ -10,6 +10,8 @@ package backtracking;//Given n pairs of parentheses, write a function to generat
   //"()()()"
 //]
 
+import java.util.ArrayList;
+import java.util.List;
 class GenerateParentheses {
     public List<String> generateParenthesis(int n) {
         List<String> result = new ArrayList<String>();

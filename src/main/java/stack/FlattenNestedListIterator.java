@@ -12,6 +12,10 @@ package stack;// Given a nested list of integers, implement an iterator to flatt
 
 // By calling next repeatedly until hasNext returns false, the order of elements returned by next should be: [1,4,6].
 
+import java.util.Iterator;
+import java.util.List;
+import java.util.Stack;
+
 /**
  * // This is the interface that allows for creating nested lists.
  * // You should not implement it, or speculate about its implementation
@@ -30,9 +34,9 @@ package stack;// Given a nested list of integers, implement an iterator to flatt
  * }
  */
 public class FlattenNestedListIterator implements Iterator<Integer> {
-    Stack<NestedInteger> stack = new Stack<NestedInteger>();
+    Stack<NestedInteger> stack = new Stack<>();
 
-    public NestedIterator(List<NestedInteger> nestedList) {
+    public FlattenNestedListIterator(List<NestedInteger> nestedList) {
         for(int i = nestedList.size() - 1; i >= 0; i--) {
             stack.push(nestedList.get(i));
         }
@@ -41,6 +45,10 @@ public class FlattenNestedListIterator implements Iterator<Integer> {
     @Override
     public Integer next() {
         return stack.pop().getInteger();
+    }
+
+    private Integer getInteger() {
+        return 0;
     }
 
     @Override
@@ -63,8 +71,3 @@ public class FlattenNestedListIterator implements Iterator<Integer> {
     }
 }
 
-/**
- * Your NestedIterator object will be instantiated and called as such:
- * NestedIterator i = new NestedIterator(nestedList);
- * while (i.hasNext()) v[f()] = i.next();
- */

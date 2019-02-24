@@ -14,6 +14,9 @@ package array;    // Given a collection of integers that might contain duplicate
 //   []
 // ]
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 public class SubsetsII {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         Arrays.sort(nums);

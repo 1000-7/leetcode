@@ -32,4 +32,6 @@ public class FindTheCelebrity extends Relation {
         //return the celebrity
         return candidate;
     }
+
+
 }

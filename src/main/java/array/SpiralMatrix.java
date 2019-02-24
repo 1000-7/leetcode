@@ -19,6 +19,9 @@ package array;//Given a matrix of m x n elements (m rows, n columns), return all
 //]
 //Output: [1,2,3,4,8,12,11,10,9,5,6,7]
 
+import java.util.ArrayList;
+import java.util.List;
+
 class SpiralMatrix {
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> result = new ArrayList<Integer>();

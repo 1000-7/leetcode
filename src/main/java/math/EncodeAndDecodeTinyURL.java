@@ -5,6 +5,8 @@ package math;//TinyURL is a URL shortening service where you enter a URL such as
 //encode/decode algorithm should work. You just need to ensure that a URL can be encoded to a tiny URL 
 //and the tiny URL can be decoded to the original URL.
 
+import java.util.HashMap;
+
 public class EncodeAndDecodeTinyURL {
     HashMap<String, String> map = new HashMap<String, String>();
     String characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";

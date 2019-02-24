@@ -31,4 +31,6 @@ public class GuessNumberHigherOrLower extends GuessGame {
         
         return -1;
     }
+
+
 }

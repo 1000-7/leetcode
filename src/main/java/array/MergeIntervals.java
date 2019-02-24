@@ -13,6 +13,11 @@ package array;// Given a collection of intervals, merge all overlapping interval
  *     Interval(int s, int e) { start = s; end = e; }
  * }
  */
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 class MergeIntervals {
     public List<Interval> merge(List<Interval> intervals) {
         List<Interval> result = new ArrayList<Interval>();

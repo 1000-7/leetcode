@@ -12,6 +12,9 @@ package array;//Given an array of integers where 1 ≤ a[i] ≤ n (n = size of a
 //Output:
 //[5,6]
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 class FindAllNumbersDisappearedInAnArray {
     public List<Integer> findDisappearedNumbers(int[] nums) {
         List<Integer> result = new ArrayList<Integer>();

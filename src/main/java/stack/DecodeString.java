@@ -6,6 +6,8 @@ package stack;// Given an encoded string, return it's decoded string.
 
 // Furthermore, you may assume that the original data does not contain any digits and that digits are only for those repeat numbers, k. For example, there won't be input like 3a or 2[4].
 
+import java.util.Stack;
+
 public class DecodeString {
     public String decodeString(String s) {
         //declare empty string

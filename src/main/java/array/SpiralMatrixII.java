@@ -10,7 +10,7 @@ package array;// Given an integer n, generate a square matrix filled with elemen
 //  [ 7, 6, 5 ]
 // ]
 
-public class SpiralMatrix {
+public class SpiralMatrixII {
     public int[][] generateMatrix(int n) {
         int[][] spiral = new int[n][n];
         
