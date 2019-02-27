@@ -1,4 +1,4 @@
-package company.bytedance;
+package company.bytedance.dp;
 
 /**
  * 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。

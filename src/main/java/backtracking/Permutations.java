@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+@Deprecated
 public class Permutations {
     public List<List<Integer>> permute(int[] nums) {
         LinkedList<List<Integer>> result = new LinkedList<>();
@@ -37,9 +38,9 @@ public class Permutations {
 
 
     public static void main(String[] args) {
-        System.out.println(new Permutations().permute(new int[]{1, 1, 3, 4}));
+        System.out.println(new Permutations().permute(new int[]{1, 2, 3, 4}));
         System.out.println(new PermuteUnique().permuteUnique(new int[]{1, 1, 2, 2}));
-        System.out.println(new Permute2().permute(new int[]{1, 1, 3, 4}));
+        System.out.println(new Permute2().permute(new int[]{1, 2, 3, 4}));
     }
 
 

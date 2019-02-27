@@ -1,4 +1,4 @@
-package company.bytedance;
+package company.bytedance.string;
 
 import java.util.ArrayList;
 import java.util.List;

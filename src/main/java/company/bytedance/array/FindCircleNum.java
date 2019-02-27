@@ -1,0 +1,102 @@
+package company.bytedance.array;
+
+/**
+ * 朋友圈
+ * 班上有 N 名学生。其中有些人是朋友，有些则不是。他们的友谊具有是传递性。如果已知 A 是 B 的朋友，B 是 C 的朋友，那么我们可以认为 A 也是 C 的朋友。所谓的朋友圈，是指所有朋友的集合。
+ * <p>
+ * 给定一个 N * N 的矩阵 M，表示班级中学生之间的朋友关系。如果M[i][j] = 1，表示已知第 i 个和 j 个学生互为朋友关系，否则为不知道。你必须输出所有学生中的已知的朋友圈总数。
+ * <p>
+ * 示例 1:
+ * <p>
+ * 输入:
+ * [[1,1,0],
+ * [1,1,0],
+ * [0,0,1]]
+ * 输出: 2
+ * 说明：已知学生0和学生1互为朋友，他们在一个朋友圈。
+ * 第2个学生自己在一个朋友圈。所以返回2。
+ * 示例 2:
+ * <p>
+ * 输入:
+ * [[1,1,0],
+ * [1,1,1],
+ * [0,1,1]]
+ * 输出: 1
+ * 说明：已知学生0和学生1互为朋友，学生1和学生2互为朋友，所以学生0和学生2也是朋友，所以他们三个在一个朋友圈，返回1。
+ * 注意：
+ * <p>
+ * N 在[1,200]的范围内。
+ * 对于所有学生，有M[i][i] = 1。
+ * 如果有M[i][j] = 1，则有M[j][i] = 1。
+ * <p>
+ * https://blog.csdn.net/ccccc1997/article/details/82051564
+ */
+public class FindCircleNum {
+    public static void main(String[] args) {
+        int[][] friends = new int[][]{{1, 1, 0, 1}, {1, 1, 0, 0}, {0, 0, 1, 0}, {1, 0, 0, 1}};
+        System.out.println(new FindCircleNum().findCircleNum(friends));
+        System.out.println(new FindCircleNum().findCircleNum2(friends));
+    }
+
+    public int findCircleNum(int[][] M) {
+        if (M == null || M.length == 0 || M.length != M[0].length) {
+            return 0;
+        }
+
+        int[] fathers = new int[M.length];
+        for (int i = 0; i < fathers.length; ++i) {
+            fathers[i] = i;
+        }
+
+        int count = M.length;
+        //只循环上半个三角
+        for (int i = 0; i < M.length; ++i) {
+            for (int j = i + 1; j < M.length; ++j) {
+                if (M[i][j] == 1) {
+                    int fatherOfI = findFather(fathers, i);
+                    int fatherOfJ = findFather(fathers, j);
+                    if (fatherOfI != fatherOfJ) {
+                        fathers[fatherOfI] = fatherOfJ;
+                        count--;
+                    }
+                }
+            }
+        }
+        return count;
+
+    }
+
+    private int findFather(int[] fathers, int i) {
+        return fathers[i] != i ? findFather(fathers, fathers[i]) : fathers[i];
+    }
+
+    private void union(int[] fathers, int i, int j) {
+        fathers[i] = j;
+    }
+
+    public int findCircleNum2(int[][] M) {
+        if (M == null || M.length == 0 || M[0].length == 0) {
+            return 0;
+        }
+
+        int count = 0;
+        int[] visited = new int[M.length];
+        for (int i = 0; i < M.length; i++) {
+            if (visited[i] == 0) {
+                count++;
+                dfs(M, visited, i);
+            }
+        }
+
+        return count;
+    }
+
+    private void dfs(int[][] matrix, int[] visited, int i) {
+        visited[i] = 1;
+        for (int j = 0; j < matrix.length; j++) {
+            if (matrix[i][j] == 1 && visited[j] == 0) {
+                dfs(matrix, visited, j);
+            }
+        }
+    }
+}
