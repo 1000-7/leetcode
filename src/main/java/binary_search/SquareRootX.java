@@ -25,4 +25,8 @@ public class SquareRootX {
         
         return right;
     }
+
+    public static void main(String[] args) {
+        System.out.println(new SquareRootX().mySqrt(8));
+    }
 }
